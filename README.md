@@ -29,14 +29,16 @@
 [Sing-box精装桶小白一键脚本（五）：集成oblivion warp免费vpn功能，本地WARP+赛风VPN切换分流(30个国家IP)](https://youtu.be/5Y6NPsYPws0)
 
 ### VPS专用一键脚本如下：快捷方式：```sb```
-### (注意：serv00不可用，请继续往下翻)
-```
-bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/sb.sh)
-```
-或者
+
 ```
 bash <(wget -qO- https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/sb.sh)
 ```
+或者
+```
+bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/sb.sh)
+```
+
+更新中的ArgoSB脚本，专为Google IDX VPS设计：https://github.com/yonggekkk/ArgoSB
 
 ### Sing-box-yg脚本界面预览图（注：相关参数随意填写，仅供围观）
 
@@ -131,7 +133,10 @@ curl -sSL https://raw.githubusercontent.com/yonggekkk/sing-box-yg/main/kp.sh -o 
 * 8、如果进程爆满、进不了SSH、或者报错：bash: fork: retry: Resource temporarily unavailable，请参数[博客教程](https://ygkkk.blogspot.com/2025/01/serv00.html)中的红字说明，清空重置 
 
 -----------------------------------------------------
+### 感谢支持！微信打赏甬哥侃侃侃ygkkk
+![41440820a366deeb8109db5610313a1](https://github.com/user-attachments/assets/5cd2d891-ae54-4397-8211-ac4c6d1099c9)
 
+---------------------------------------
 ### 感谢你右上角的star🌟
 [![Stargazers over time](https://starchart.cc/yonggekkk/sing-box-yg.svg)](https://starchart.cc/yonggekkk/sing-box-yg)
 

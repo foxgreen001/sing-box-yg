@@ -26,6 +26,7 @@ devil www add ${USERNAME}.${address} php > /dev/null 2>&1
 FILE_PATH="${HOME}/domains/${USERNAME}.${address}/public_html"
 [ -d "$FILE_PATH" ] || mkdir -p "$FILE_PATH"
 [ -d "$WORKDIR" ] || (mkdir -p "$WORKDIR" && chmod 777 "$WORKDIR")
+devil binexec on >/dev/null 2>&1
 curl -sk "http://${snb}.${USERNAME}.${hona}.net/up" > /dev/null 2>&1
 
 read_ip() {
@@ -1072,7 +1073,7 @@ log-level: info
 unified-delay: true
 global-client-fingerprint: chrome
 dns:
-  enable: true
+  enable: false
   listen: :53
   ipv6: true
   enhanced-mode: fake-ip
@@ -1571,13 +1572,13 @@ done
 if [[ ! "$response" =~ (unknown|not|error) ]]; then
 grep ':' $WORKDIR/ip.txt | sort -u -o $WORKDIR/ip.txt
 fi
+if [ "$hona" = "serv00" ]; then
+red "目前免费Serv00使用代理脚本会有被封账号的风险，请知晓！！！"
+fi
 green "${hona}服务器名称：${snb}"
 echo
 green "当前可选择的IP如下："
 cat $WORKDIR/ip.txt
-if [[ -e $WORKDIR/config.json ]]; then
-echo "如默认节点IP被墙，可在客户端地址更换以上任意一个显示可用的IP"
-fi
 echo
 portlist=$(devil port list | grep -E '^[0-9]+[[:space:]]+[a-zA-Z]+' | sed 's/^[[:space:]]*//')
 if [[ -n $portlist ]]; then
